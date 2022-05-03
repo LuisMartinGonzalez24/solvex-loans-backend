@@ -1,0 +1,10 @@
+#node_modules
+/node_modules
+
+#env
+.env
+
+# folder build
+/dist
+
+/src/firebase/*.json
