@@ -14,4 +14,12 @@ const ClientSchema = new Schema<Client>({
 	},
 });
 
+ClientSchema.methods.toJSON = function () {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const { __v, _id, ...client } = this.toObject();
+	client.id = _id;
+
+	return client;
+};
+
 export default model<Client>(Collections.Client, ClientSchema);

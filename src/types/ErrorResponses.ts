@@ -1,4 +1,8 @@
 enum ErrorCodes {
+	//* Error loan code
+	'loan/dcoument-not-exist' = 'loan/dcoument-not-exist',
+	'loan/error-register' = 'loan/error-register',
+
 	//* Error client code
 	'client/error-register' = 'client/error-register',
 
@@ -15,6 +19,16 @@ type ErrorResponse = {
 };
 
 export const errorResponses: ErrorResponse = {
+	//* Loan error response
+	['loan/dcoument-not-exist']: {
+		code: ErrorCodes['loan/dcoument-not-exist'],
+		message: 'Loan does not exist in database',
+	},
+	['loan/error-register']: {
+		code: ErrorCodes['loan/error-register'],
+		message: 'error registering loan',
+	},
+
 	//* Client error response
 	['client/error-register']: {
 		code: ErrorCodes['client/error-register'],
